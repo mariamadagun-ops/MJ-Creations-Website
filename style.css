@@ -1,0 +1,240 @@
+@layer global, component, utility;
+
+
+
+
+
+
+@layer global{
+
+/* Fonts */
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/montserrat-v31-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* montserrat-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/montserrat-v31-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* montserrat-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/montserrat-v31-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* montserrat-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/montserrat-v31-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* montserrat-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/montserrat-v31-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    *, 
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+   body {
+    margin:0;
+    background-color: var(--c-white);
+    color:var(--c-black);
+    font-family:'Montserrat', sans-serif;
+    }
+    
+h1,h2,h3,h4,h5{
+    margin:0;
+}
+
+p{
+    margin:0;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+
+
+    /* Colours*/
+    :root{
+--c-purple:hsl(320, 38%, 31%);
+--c-black:hsl(0, 0%, 13%);
+--c-grey:hsl(0, 0%, 34%);
+--c-white:hsl(0, 0%, 100%);
+
+    --color-main-bg:var(--c-white);
+    --color-text:var(--c-black);
+    --color-header-bg:var(--c-white);
+    --color-button-text:var(--c-white);
+    --color-button-primary:var(--c-black);
+     --color-button-secondary:var(--c-purple);
+    --color-dates-bg:var(--c-black);
+  
+  
+}
+
+    }
+
+
+
+
+@layer typography{
+
+    :root{
+         --fs-20: 1.25rem;
+          --fs-18:1.125rem;
+          --fs-14:0.875rem;
+          --fs-12:0.75rem;
+          --fs-11:0.688rem;
+
+          --font-size-h1: var(--fs-14);
+          --font-size-h2:var(--fs-14);
+          --font-size-h3:var(--fs-14);
+          --font-size-p:var(--fs-14);
+          --font-size-p-sm:var(--fs-11);
+
+          @media (width>= 43.75rem){
+            --font-size-h1: var(--fs-18);
+            --font-size-h2:var(--fs-18);
+            --font-size-h3: var(--fs-18);
+            --font-size-p: var(--fs-18);
+            --font-size-p-sm: var(--fs-12);
+
+
+          }
+
+
+
+
+          @media (width>= 68.75rem){
+            --font-size-h1:var(--fs-20);
+            --font-size-h2:var(--fs-20);
+            --font-size-h3:var(--fs-20);
+            --font-size-p:var(--fs-20);
+            --font-size-p-sm:var(--fs-14);
+          }
+    }
+
+     h1{
+    font-size: var(--font-size-h1);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    
+   }
+          h2{
+          font-size:var(--font-size-h2);
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 700;
+          }
+
+
+h3{
+    font-size: var(--font-size-h3);
+        font-family: 'Montserrat', sans-serif;
+        font-weight:600;
+}
+
+
+
+p{
+    font-size:var(--font-size-p);
+       font-family: 'Montserrat', sans-serif;
+       font-weight: 500;
+       
+}
+
+
+
+p{
+    font-size:var(--font-size-p-sm);
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 400;
+    &.small{
+        font-size:var(--font-size-p-sm);
+    }
+}
+
+
+
+
+
+
+        
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@layer component{}
+
+
+
+
+
+
+
+
+
+
+@layer utility{}

@@ -82,18 +82,20 @@ box-sizing: border-box;
 
    body {
     margin:0;
+ 
     background-color: var(--c-white);
     color:var(--c-black);
     font-family:'Montserrat', sans-serif;
     }
     
-h1,h2,h3,h4,h5{
+h1,h2,h3,p, p.small, ul{
     margin:0;
 }
 
-p{
-    margin:0;
-}
+
+
+
+
 
 img{
     display:block;
@@ -128,24 +130,27 @@ img{
 @layer typography{
 
     :root{
-         --fs-20: 1.25rem;
+
+         --fs-24:1.5rem;
+         --fs-20:1.25rem;
           --fs-18:1.125rem;
           --fs-14:0.875rem;
           --fs-12:0.75rem;
           --fs-11:0.688rem;
 
-          --font-size-h1: var(--fs-14);
+          /* I don't know why this is here
+           --font-size-h1: var(--fs-14);
           --font-size-h2:var(--fs-14);
           --font-size-h3:var(--fs-14);
           --font-size-p:var(--fs-14);
-          --font-size-p-sm:var(--fs-11);
+          --font-size-p-sm:var(--fs-11); */
 
-          @media (width>= 43.75rem){
-            --font-size-h1: var(--fs-18);
-            --font-size-h2:var(--fs-18);
-            --font-size-h3: var(--fs-18);
-            --font-size-p: var(--fs-18);
-            --font-size-p-sm: var(--fs-12);
+          @media (width>= 43.75rem){ /* Phone */
+            --font-size-h1: var(--fs-14);
+            --font-size-h2:var(--fs-14);
+            --font-size-h3: var(--fs-14);
+            --font-size-p: var(--fs-14);
+            --font-size-p-sm: var(--fs-11);
 
 
           }
@@ -153,8 +158,8 @@ img{
 
 
 
-          @media (width>= 68.75rem){
-            --font-size-h1:var(--fs-20);
+          @media (width>= 68.75rem){ /* Laptop */
+            --font-size-h1:var(--fs-24);
             --font-size-h2:var(--fs-20);
             --font-size-h3:var(--fs-20);
             --font-size-p:var(--fs-20);
@@ -190,20 +195,15 @@ p{
        
 }
 
-
-
 p{
-    font-size:var(--font-size-p-sm);
+
+     &.small{
+        font-size:var(--font-size-p-sm);
      font-family: 'Montserrat', sans-serif;
      font-weight: 400;
-    &.small{
-        font-size:var(--font-size-p-sm);
+   
     }
 }
-
-
-
-
 
 
         
@@ -222,11 +222,49 @@ p{
 
 
 
+@layer component{
+
+
+.header{
+  display:flex;
+align-items: center;
+justify-content: space-between;
+background-color: var(--c-white);
+   box-shadow: 2px 2px 5px;
+   
+
+
+
+}
+
+a{
+   color:var(--c-black);
+   text-decoration: none;
+   margin:50px;
+}
+
+
+ul {
+  /* this removes the dots on the list items*/
+  list-style-type: none;
+display:flex;
+gap:150px;
+  margin: 0;
+  padding: 0;
+  font-size: var(--font-size-h1);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+  
+
+}
+
+   @media (width>= 43.75rem){ /* Phone */
 
 
 
 
-@layer component{}
+
+  @media (width>= 68.75rem){ /* Laptop */
 
 
 
@@ -234,7 +272,46 @@ p{
 
 
 
+}
+
+
+}
+
+
+}
 
 
 
-@layer utility{}
+
+@layer utility{
+
+.visually-hidden{
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height:1px;
+  overflow: hidden;
+
+
+
+  &.skip:focus{
+    left:0;
+    width:auto;
+    height:auto;
+    background: #ffff;
+    padding: 10px;
+    border:1px solid;
+
+
+  }
+
+}
+
+
+
+
+
+
+
+}

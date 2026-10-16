@@ -1,3 +1,38 @@
+
+/* Colours */
+
+
+:root {
+    --c-white: hsl(0, 0%, 100%);
+    --c-black: hsl(0, 0%, 13%);
+    --c-grey: hsl(0, 0%, 34%);
+    --c-plum: hsl(320, 38%, 31%);
+    --c-pink: hsl(344, 100%, 96%);
+    --c-transparent: transparent;
+
+
+
+--colour-main-bg: var(--c-white);
+--colour-text-dark:var(--c-black);
+--colour-text-light:var(--c-white);
+--colour-hero-bg:var(--c-white);
+--colour-button-primary:var(--c-black);
+--colour-button-secondary:var(--c-plum);
+--colour-border-primary:var(--c-black);
+--colour-border-secondary:var(--c-plum);
+--colour-button:var(--c-transparent);
+--colour-button-text:var(--c-black);
+}
+
+
+.wrapper{
+    width: min(calc(100% - 48px));
+    margin-inline:auto;
+    
+}
+
+
+
 *,
  *::before,
  *::after{
@@ -5,7 +40,7 @@
 }
 
 *{
-    margin: 0;
+    margin:0;
 }
 
 
@@ -19,5 +54,22 @@ svg{
     max-width: 100%;
     display: block;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
